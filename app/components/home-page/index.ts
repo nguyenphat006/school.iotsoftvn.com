@@ -11,7 +11,7 @@ import TheNumbers from './section/the-numbers'
 import EducationLevel from './section/education-level'
 import LetsBeginCTA from './section/lets-begin'
 import TypicalDaySection from './section/typical-day'
-import AcademicSection from './section/academic'
+import AcademicSection from './section/academic-divisions'
 import StudentCareSection from './section/student-care'
 export { 
   VideoHero, 

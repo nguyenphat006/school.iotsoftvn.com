@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import img01 from "@/images/home-page/section-academics/01.png"
 import img02 from "@/images/home-page/section-academics/02.png"
 import img03 from "@/images/home-page/section-academics/03.png"
+import cardlhbs from "@/images/home-page/section-academics/card-lhbs.png"
 
 const academicDivisions = [
   {
@@ -46,25 +47,23 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
     <section 
     id='academic-divisions'
     className="py-24 md:py-32" ref={ref}>
-      <div className="w-full max-w-screen-2xl mx-auto px-4 lg:px-8">
+      <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Section */}
         <motion.div
-          className="text-center mb-16"
+           className="text-start mb-16 flex items-center gap-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
+            <div className="h-1.5 w-32 bg-[#1A5336]"></div>
+
           <h2 className="font-bold text-[#1A5336] text-4xl lg:text-5xl mb-6">
             Academic Divisions
           </h2>
-          <p className="text-[#212121] font-medium text-lg max-w-4xl mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Rhoncus porttitor sed velit magna porta auctor. Sit a non fames non. Et fames egestas etiam nisl. 
-            Arcu eu turpis viverra felis erat ornare semper lacus metus.
-          </p>
         </motion.div>
 
         {/* Academic Divisions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {academicDivisions.map((division, index) => (
             <motion.div
               key={division.id}
@@ -74,7 +73,7 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               onClick={() => onNavigate(division.href)}
             >
-              <div className="relative h-[400px] lg:h-[450px] rounded-lg overflow-hidden">
+              <div className="relative h-[400px] lg:h-[450px] rounded-none overflow-hidden">
                 {/* Background Image */}
                 <img
                   src={division.image}
@@ -88,7 +87,7 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   {/* Grade Range Badge */}
-                  <div className="inline-block mb-3">
+                  <div className="inline-block">
                     <span className="text-[#FABA1E] text-sm font-bold uppercase tracking-wider">
                       {division.gradeRange}
                     </span>
@@ -113,9 +112,15 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
                     </div>
                   </div>
                 </div>
-                
                 {/* Hover Overlay for better interaction feedback */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+                <div className="absolute bottom-0 right-0 w-54 h-auto pointer-events-none">
+                <img
+                  src={cardlhbs}
+                  alt="LHBS decoration"
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </motion.div>
           ))}

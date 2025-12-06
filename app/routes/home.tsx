@@ -14,10 +14,7 @@ export default function Home({onNavigate}: {onNavigate: (path: string) => void})
     
       <HeroCarousel onNavigate={onNavigate} />
       <AcademicSection onNavigate={onNavigate} />
-      <TypicalDaySection />
       {/* Section xxx: Founding Message */}
-      <FoundingMessageSection onNavigate={onNavigate} />
-      <StudentCareSection />
       {/* Section xxx: Core Strengths - 5 Pillars */}
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
