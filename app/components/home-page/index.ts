@@ -13,6 +13,7 @@ import LetsBeginCTA from './section/lets-begin'
 import TypicalDaySection from './section/typical-day'
 import AcademicSection from './section/academic-divisions'
 import StudentCareSection from './section/student-care'
+import  StudentAchievementsSection from './section/student-achievements'
 import { OverviewSection } from './section/overview'
 
 export { 
@@ -33,5 +34,6 @@ export {
   TypicalDaySection,
   AcademicSection,
   StudentCareSection,
-  OverviewSection
+  OverviewSection,
+  StudentAchievementsSection
 }
