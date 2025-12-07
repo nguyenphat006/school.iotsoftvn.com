@@ -1,84 +1,91 @@
-import { motion } from 'motion/react';
-import { useState, useEffect } from 'react';
-import { AnimatedHighlight } from '~/components/animated-highlight';
-import { ScrollIndicator } from '~/components/ScrollIndicator';
+import { motion } from 'motion/react'
+import { useState, useEffect } from 'react'
+import { ScrollIndicator } from '~/components/ScrollIndicator' // Giả sử đường dẫn đúng
 import Herobg from '@/images/home-page/Hero-bg.png'
+
 interface HeroProps {
-  onNavigate: (path: string) => void;
+  onNavigate: (path: string) => void
 }
 
 export default function HeroCarousel({ onNavigate }: HeroProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isContentVisible, setIsContentVisible] = useState(true)
 
-  // Only background images array - content stays the same
   const backgroundImages = [
-    Herobg
-    // "https://lhbs.edu.vn/wp-content/uploads/2025/08/IMG_0057.jpg",
-    // "https://lhbs.edu.vn/wp-content/uploads/2025/02/IMG_8910.jpg",
-    // "https://lhbs.edu.vn/wp-content/uploads/2025/04/487416882_640655751929902_4676467757656853160_n.jpg",
-    // "https://lhbs.edu.vn/wp-content/uploads/2021/05/MG_5074.jpg",
+    Herobg,
+    'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/543157713_759809520014524_6243659489729173596_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFpZW4UkWopXLqUwnApPxzx6Sldju96q1rpKV2O73qrWlVgT_N9-qqIf8pv8uUhxEi4rgsx8AI2JKqSn1pil16h&_nc_ohc=yu4yLYaebQ0Q7kNvwGtodRu&_nc_oc=Adn7HVWs-KKiiFver-Sdn3LQEDs0TbEms4LZ0qLqJi4sZwIVys-IZlz3_97J6i3XmTk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=aax7A0hj7hhJKvywZYorng&oh=00_AflCXcNX4DQf4t8pNoI3cZ6kDATevPjhSufI1C85MDCGrg&oe=693B8DE4'
+  ]
 
-  ];
-
-  // Auto-play functionality
   useEffect(() => {
-    if (!isAutoPlaying) return;
-
+    if (!isAutoPlaying) return
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, backgroundImages.length]);
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, backgroundImages.length])
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setIsAutoPlaying(false);
-    // Resume auto-play after 10 seconds
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+    setCurrentSlide(index)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + backgroundImages.length) % backgroundImages.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  const toggleVisibility = () => setIsContentVisible(!isContentVisible)
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] flex items-end overflow-hidden">
-      {/* Background Image with smooth transition */}
-      <div className="absolute inset-0 z-0">
+    <section
+      className='relative w-full h-dvh flex flex-col overflow-hidden snap-start cursor-pointer group'
+      onClick={toggleVisibility}
+    >
+      {/* Background Image */}
+      <div className='absolute inset-0 z-0 select-none'>
         {backgroundImages.map((image, index) => (
           <motion.div
             key={index}
-            className="absolute inset-0"
+            className='absolute inset-0'
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: index === currentSlide ? 1 : 0,
-              scale: index === currentSlide ? 1 : 1.1
+              scale: index === currentSlide ? 1.05 : 1.15
             }}
-            transition={{ 
-              opacity: { duration: 1, ease: 'easeInOut' },
-              // scale: { duration: 10, ease: 'linear' }
+            transition={{
+              opacity: { duration: 1.5, ease: 'easeInOut' },
+              scale: { duration: 10, ease: 'linear' }
             }}
           >
             <img
               src={image}
-              alt="LHBS campus with students"
-              className="w-full h-full object-cover"
-              style={{ filter: 'brightness(1)' }}
+              alt='LHBS campus'
+              className='w-full h-full object-cover object-center'
+              style={{ filter: 'brightness(0.9)' }}
+              draggable={false}
             />
           </motion.div>
         ))}
       </div>
 
+      {/* Overlays */}
+      <motion.div
+        className='absolute inset-0 z-10 bg-black/10'
+        animate={{ opacity: isContentVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      />
+      <motion.div
+        className='absolute inset-0 z-10 bg-linear-to-t from-black/80 via-black/30 to-transparent pointer-events-none'
+        animate={{ opacity: isContentVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      />
+
+      {/* Content Overlay Container */}
+      <motion.div
+        className='absolute inset-0 z-20 w-full h-full flex flex-col justify-end pb-12 md:pb-20 xl:pb-28 2xl:pb-32 px-4 md:px-12 lg:px-16 pointer-events-none'
+        animate={{ opacity: isContentVisible ? 1 : 0, y: isContentVisible ? 0 : 20 }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Scrollable Text Area - Allows content to fit or scroll in smaller viewports */}
+        <div className='w-full max-w-[1920px] mx-auto max-h-[85vh] overflow-y-auto no-scrollbar pointer-events-auto'>
+          <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
       {/* Dark Overlay focused on bottom-left content area */}
       <div className="absolute inset-0 z-10 bg-gradient-to-tr from-black/80 via-black/30 to-transparent" />
 
@@ -142,8 +149,23 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               </motion.div>
             {/* Main Title - 2 rows as requested */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              className='lg:col-span-9 xl:col-span-8 flex flex-col items-start'
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Decorative Line & Subtitle */}
+              <motion.div
+                className='flex flex-col items-start mb-2 md:mb-4'
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className='bg-[#FABA1E] w-8 h-1 md:w-12 md:h-1.5 mb-2 md:mb-3 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+                <h2 className='text-xs md:text-sm lg:text-base font-bold text-[#FABA1E] uppercase tracking-[0.2em] leading-none drop-shadow-md'>
+                  Welcome to LHBS
+                </h2>
+              </motion.div>
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mb-8"
             >
@@ -153,6 +175,18 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               </h1>
             </motion.div>
 
+              {/* Main Title */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className='mb-2 md:mb-4 lg:mb-6'
+              >
+                <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl min-[1800px]:text-7xl font-black text-white leading-[1.1] drop-shadow-2xl uppercase tracking-tight'>
+                  <span className='block mb-1 md:mb-2'>Vietnamese Culture</span>
+                  <span className='block text-white/90'>International Vision</span>
+                </h1>
+              </motion.div>
             {/* CTA Button - Row 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -170,22 +204,34 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               </button>
             </motion.div>
 
-            {/* Row 3 - Arrow down icon and tagline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex items-center gap-4"
-            >
-              {/* Arrow down icon */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="text-white"
+              {/* Tagline */}
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className='text-white/90 text-sm md:text-base lg:text-lg font-medium mb-4 md:mb-6 lg:mb-8 max-w-xl lg:max-w-2xl leading-relaxed drop-shadow-lg'
               >
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4V20M12 20L6 14M12 20L18 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                #A solid stepping stone to becoming a global citizen
+              </motion.p>
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                // Avoid cutting off shadow in scroll container by adding margin bottom
+                className='mb-2'
+              >
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onNavigate('/admissions')
+                  }}
+                  className='group relative px-5 py-2.5 md:px-7 md:py-3 lg:px-8 lg:py-3.5 bg-[#FABA1E] text-[#1E5338] font-bold text-[10px] md:text-xs lg:text-sm uppercase tracking-widest rounded-sm md:rounded 
+                           hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]'
+                >
+                  <span className='relative z-10'>Discover Now</span>
+                </button>
               </motion.div>
               
               {/* Tagline */}
@@ -193,25 +239,36 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
                 #A solid stepping stone to becoming a global citizen
               </p>
             </motion.div>
-
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Carousel Indicators */}
-      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      {/* Indicators */}
+      <motion.div
+        className='absolute bottom-6 md:bottom-10 right-4 md:right-12 z-30 flex items-center gap-2 md:gap-3'
+        animate={{ opacity: isContentVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {backgroundImages.map((_, index) => (
           <button
             key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FABA1E] ${
-              index === currentSlide 
-                ? 'bg-[#FABA1E] scale-125' 
-                : 'bg-white/50 hover:bg-white/70'
+            onClick={(e) => {
+              e.stopPropagation()
+              goToSlide(index)
+            }}
+            className={`h-1 md:h-1.5 rounded-full transition-all duration-500 ease-out ${
+              index === currentSlide
+                ? 'w-8 md:w-12 bg-[#FABA1E] shadow-[0_0_10px_rgba(250,186,30,0.6)]'
+                : 'w-1 md:w-1.5 bg-white/40 hover:bg-white hover:w-2 md:hover:w-3'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </motion.div>
+
+      <motion.div animate={{ opacity: isContentVisible ? 1 : 0 }} transition={{ duration: 0.5 }}>
+        <ScrollIndicator targetSectionId='solid-education-level' />
+      </motion.div>
       </div> */}
 
       {/* Progress Bar */}
@@ -233,5 +290,5 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
       {/* Scroll Indicator */}
       <ScrollIndicator targetSectionId="overview" />
     </section>
-  );
+  )
 }
