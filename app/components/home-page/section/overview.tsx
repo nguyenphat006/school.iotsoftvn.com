@@ -16,7 +16,9 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
   const [activeTab, setActiveTab] = useState<'primary' | 'secondary' | 'high'>('secondary');
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section 
+    id="overview"
+    className="py-16 md:py-24 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 md:px-20">
         {/* Title & Description */}
         <div className="text-center mb-16">

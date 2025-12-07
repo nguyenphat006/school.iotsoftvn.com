@@ -76,7 +76,9 @@ const dailyActivities = [
 
 export default function TypicalDaySection() {
   return (
-    <section className="py-24 md:py-32">
+    <section 
+    id='typical-day'
+    className="py-24 md:py-32">
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Row - Full Width */}
         <div className="text-center mb-16">

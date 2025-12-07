@@ -126,7 +126,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               <nav className="flex items-center text-white/80 text-base font-medium">
                 <span>LHBS School</span>
                 <span className="mx-2">›</span>
-                <span className="text-white">High School</span>
+                <span className="text-white">Primary School</span>
               </nav>
             </motion.div>
             {/* Main Title - 2 rows as requested
@@ -221,7 +221,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
       </div> */}
 
       {/* Scroll Indicator */}
-      <ScrollIndicator targetSectionId="solid-education-level" />
+      <ScrollIndicator targetSectionId="overview" />
     </section>
   );
 }

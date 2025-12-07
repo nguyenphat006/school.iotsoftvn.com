@@ -221,7 +221,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
       </div> */}
 
       {/* Scroll Indicator */}
-      <ScrollIndicator targetSectionId="solid-education-level" />
+      <ScrollIndicator targetSectionId="overview" />
     </section>
   );
 }

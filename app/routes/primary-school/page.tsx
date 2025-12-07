@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import type { Route } from './+types/home'
 import { useOutletContext } from 'react-router';
 import { 
-  StudentAchievementsSection, 
   LetsBeginCTA, 
   TestimonialQuoteSection, 
   NewsEventsSection, 
   HeroCarousel, 
   TypicalDaySection, 
   AcademicSection, 
-  GlobalRankingSection,
   FacilitiesSection,
-  ActivitiesSection } from '@/components/primary-school'
+  OverviewSection,
+  FoundingMessageSection,
+  } from '@/components/primary-school'
 import ScrollToTop from '@/components/ui/components/ScrollToTop';
 
 
@@ -30,12 +30,11 @@ export default function PrimarySchoolPage() {
     <>
     
       <HeroCarousel onNavigate={onNavigate} />
-      <TypicalDaySection/>
+      <OverviewSection onNavigate={onNavigate} />
       <AcademicSection onNavigate={onNavigate} />
-      <StudentAchievementsSection/>
       <FacilitiesSection/>
-      <ActivitiesSection/>
-      <GlobalRankingSection/>
+      <TypicalDaySection/>
+      <FoundingMessageSection onNavigate={onNavigate}/> 
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
       <LetsBeginCTA onNavigate={onNavigate} />
