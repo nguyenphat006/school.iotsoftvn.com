@@ -107,7 +107,7 @@ export default function GlobalRankingSection() {
         </div>
 
         {/* GRID: 8 columns (map) + 4 columns (universities) */}
-        <div className="grid grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-12 gap-16 items-center">
           
           {/* LEFT COLUMN: Map with Markers - 8 columns */}
           <div className="col-span-12 lg:col-span-9">
