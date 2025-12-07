@@ -9,7 +9,7 @@ export default defineConfig({
     devSourcemap: true
   },
   server: {
-    port: 9000
+    port: 9001
   },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), devtoolsJson()]
 })
