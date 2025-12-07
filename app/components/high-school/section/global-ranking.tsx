@@ -47,7 +47,7 @@ const mapMarkers = [
   },
   { 
     id: 2, 
-    label: "TOP 5", 
+    label: "TOP 2", 
     sublabel: "Đại học Toronto",
     top: "36%", 
     left: "25%", 
@@ -65,7 +65,7 @@ const mapMarkers = [
   },
   { 
     id: 4, 
-    label: "HM 8", 
+    label: "TOP 4", 
     sublabel: "Đại học Tokyo",
     top: "36%", 
     left: "85%", 
@@ -74,7 +74,7 @@ const mapMarkers = [
   },
   { 
     id: 5, 
-    label: "TOP 7", 
+    label: "TOP 5", 
     sublabel: "Đại học Melbourne",
     top: "70%", 
     left: "80%", 
@@ -170,48 +170,55 @@ export default function GlobalRankingSection() {
     <h3 className="text-2xl font-bold text-[#07622E] mb-6">Top universities</h3>
 
     {/* University Cards */}
-    <div className="flex flex-col gap-2"> {/* tăng gap từ 3 → 6 */}
+    <div className="flex flex-col gap-3">
       {topUniversities.map((university, index) => (
         <motion.div
           key={university.id}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-          className="
+        >
+          <div className="
             relative 
             w-full 
             overflow-hidden 
             shadow-lg 
             group 
             cursor-pointer 
-            aspect-[3/1]   /* giữ tỷ lệ đẹp, tự động cao */
-          "
-        >
-          {/* Background Image */}
-          <img
-            src={university.image}
-            alt={university.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+            h-20
+          ">
+            {/* Background Image */}
+            <img
+              src={university.image}
+              alt={university.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-          {/* Content */}
-          <div className="absolute inset-0 flex flex-col justify-between">
-            {/* Logo - Top Left */}
-            <div className="flex justify-start">
-              <img
-                src={university.logo}
-                alt={`${university.name} logo`}
-                className="h-8 w-8 object-contain"
-              />
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-between p-3">
+              {/* Logo - Top Left */}
+              <div className="flex justify-start">
+                <img
+                  src={university.logo}
+                  alt={`${university.name} logo`}
+                  className="h-6 w-6 object-contain"
+                />
+              </div>
+
+              {/* University Name - Bottom */}
+              <h4 className="text-white font-bold text-xs uppercase tracking-wide">
+                {university.name}
+              </h4>
             </div>
+          </div>
 
-            {/* University Name - Bottom with padding */}
-            <h4 className="text-white font-bold text-sm uppercase tracking-wide pb-3 px-3">
-              {university.name}
-            </h4>
+          {/* 3D View Link */}
+          <div className="flex items-center justify-end gap-1 mt-2 text-[#07622E] hover:text-[#FABA1E] transition-colors cursor-pointer group/view">
+            <FaMapMarkerAlt size={14} className="group-hover/view:scale-110 transition-transform text-[#FABA1E]" />
+            <span className="text-xs font-semibold uppercase tracking-wide">3D View</span>
           </div>
         </motion.div>
       ))}
