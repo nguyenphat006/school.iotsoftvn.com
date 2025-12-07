@@ -123,7 +123,7 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
               <div className="rounded-lg p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
                 <p className="text-sm font-semibold text-gray-600 mb-4">STEAM</p>
                 <div className="flex items-center justify-center h-24">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%231a5336' font-size='16' font-weight='bold' dy='.3em'%3ESTEM LEARNING%3C/text%3E%3C/svg%3E" alt="STEM Learning" className="max-h-full w-full object-contain" />
+                  <img src="https://img.freepik.com/free-vector/stem-education-logo-banner-with-learning-elements_1308-60691.jpg?semt=ais_hybrid&w=740&q=80" alt="STEM Learning" className="max-h-full w-full object-contain" />
                 </div>
               </div>
 
@@ -131,7 +131,7 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
               <div className="rounded-lg p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
                 <p className="text-sm font-semibold text-gray-600 mb-4">Certificate 02</p>
                 <div className="flex items-center justify-center h-24">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%231a5336' font-size='14' font-weight='bold' dy='.3em'%3EADVANTAGES%3C/text%3E%3C/svg%3E" alt="Advantages" className="max-h-full w-full object-contain" />
+                  <img src="https://vi.englishcentral.com/images/og-image.png" alt="Advantages" className="max-h-full w-full object-contain" />
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
               <div className="rounded-lg p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
                 <p className="text-sm font-semibold text-gray-600 mb-4">Certificate 03</p>
                 <div className="flex items-center justify-center h-24">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%231a5336' font-size='12' font-weight='bold' dy='.3em'%3EEnglishCentral%3C/text%3E%3C/svg%3E" alt="English Central" className="max-h-full w-full object-contain" />
+                  <img src="https://advantagesschool.com/wp-content/uploads/2024/10/advantages-school-international-logo.jpg" alt="English Central" className="max-h-full w-full object-contain" />
                 </div>
               </div>
 
@@ -147,7 +147,7 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
               <div className="rounded-lg p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
                 <p className="text-sm font-semibold text-gray-600 mb-4">Certificate 04</p>
                 <div className="flex items-center justify-center h-24">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Ctext x='50%25' y='40%25' text-anchor='middle' fill='%231a5336' font-size='10' font-weight='bold'%3ECambridge%3C/text%3E%3Ctext x='50%25' y='60%25' text-anchor='middle' fill='%231a5336' font-size='10' font-weight='bold'%3EAssessment English%3C/text%3E%3C/svg%3E" alt="Cambridge Assessment English" className="max-h-full w-full object-contain" />
+                  <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="Cambridge Assessment English" className="max-h-full w-full object-contain" />
                 </div>
               </div>
             </div>

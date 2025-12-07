@@ -129,7 +129,6 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
                 <span className="text-white">Secondary School</span>
               </nav>
             </motion.div>
-            {/* Main Title - 2 rows as requested
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -137,8 +136,8 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               className="mb-8"
             >
               <h1 className="text-white text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold drop-shadow-lg">
-                <span className="block">Văn hóa Việt Nam</span>
-                <span className="block">Tầm nhìn quốc tế</span>
+                <span className="block">The foundation of </span>
+                <span className="block">the academic path</span>
               </h1>
             </motion.div>
 
@@ -180,7 +179,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               
               {/* Tagline */}
               <p className="text-white text-lg md:text-xl font-medium drop-shadow-lg">
-                #Bước đệm vững chắc để trở thành công dân toàn cầu
+                #A solid stepping stone to becoming a global citizen
               </p>
             </motion.div>
 
