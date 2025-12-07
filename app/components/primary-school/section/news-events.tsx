@@ -78,7 +78,7 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
             <h3 className='text-xl md:text-2xl font-bold text-[#FABA1E] uppercase tracking-[0.2em] mb-3 text-center'>
               Latest Updates
             </h3>
-            <h2 className='text-4xl md:text-5xl lg:text-6xl font-black text-[#1E5338] uppercase tracking-tight text-center drop-shadow-sm'>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-tight text-center drop-shadow-sm'>
               News & Events
             </h2>
           </motion.div>

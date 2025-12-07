@@ -129,6 +129,17 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
                 <span className="text-white">LHBS Bien Hoa Kindergarten</span>
               </nav>
             </motion.div> */}
+             <motion.div
+                className='flex flex-col items-start mb-6'
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+                <h2 className='text-xl md:text-2xl font-bold text-[#FABA1E] uppercase tracking-[0.2em] leading-none drop-shadow-md'>
+                  Welcome to LHBS
+                </h2>
+              </motion.div>
             {/* Main Title - 2 rows as requested */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -136,7 +147,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mb-8"
             >
-              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold drop-shadow-lg">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold drop-shadow-lg uppercase block whitespace-nowrap">
                 <span className="block">Văn hóa Việt Nam</span>
                 <span className="block">Tầm nhìn quốc tế</span>
               </h1>
@@ -150,13 +161,12 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               className="mb-8"
             >
               <button
-                onClick={() => onNavigate('/admissions')}
-                className="px-8 md:px-10 h-12 bg-[#FABA1E] text-black font-bold uppercase text-sm md:text-base tracking-wider 
+                className="px-8 md:px-10 h-14 bg-[#FABA1E] text-[#1e5338] font-bold uppercase text-sm md:text-base tracking-wider 
                           hover:bg-[#e5a812] transition-all focus:outline-none focus:ring-2 focus:ring-[#FABA1E] focus:ring-offset-2 
-                          focus:ring-offset-transparent shadow-xl drop-shadow-lg !rounded-none"
+                          focus:ring-offset-transparent shadow-xl drop-shadow-lg"
                 style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
               >
-                Discover More →
+                Khám phá ngay
               </button>
             </motion.div>
 
