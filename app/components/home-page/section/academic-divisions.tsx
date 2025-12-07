@@ -46,7 +46,7 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
   return (
     <section 
     id='academic-divisions'
-    className="py-24 md:py-32" ref={ref}>
+    className="" ref={ref}>
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Section */}
         <motion.div

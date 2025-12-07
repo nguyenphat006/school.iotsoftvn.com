@@ -15,6 +15,7 @@ import AcademicSection from './section/academic-divisions'
 import StudentCareSection from './section/student-care'
 import  StudentAchievementsSection from './section/student-achievements'
 import { OverviewSection } from './section/overview'
+import GlobalRankingSection from './section/global-ranking'
 
 export { 
   VideoHero, 
@@ -35,5 +36,6 @@ export {
   AcademicSection,
   StudentCareSection,
   OverviewSection,
-  StudentAchievementsSection
+  StudentAchievementsSection,
+  GlobalRankingSection
 }

@@ -3,6 +3,7 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
+import bgAcademicBilingual from '@/images/home-page/section-03-bg.png'
 
 const studentAchievements = [
   {
@@ -68,6 +69,18 @@ export default function StudentAchievementsSection() {
 
   return (
     <section ref={ref} className="relative py-20 overflow-hidden bg-[#015c34]">
+      {/* Background Image Overlay */}
+ {/* Background Academic Bilingual Image */}
+      <div 
+        className="absolute inset-0 z-10 opacity-60"
+        style={{
+          backgroundImage: `url(${bgAcademicBilingual})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      
       <div className="relative z-10 container mx-auto px-6">
 
         {/* TITLE */}
