@@ -48,7 +48,8 @@ export default function LetsBeginCTA({ onNavigate }: { onNavigate: (path: string
         >
 
          {/* Title */}
-          <h2 className=" text-3xl md:text-4xl lg:text-5xl text-[#fffae9] mb-4">
+         
+          <h2 className=" text-3xl md:text-4xl lg:text-5xl text-[#fffae9] mb-4 uppercase font-black">
             {lbTitle}
           </h2>
           {/* Subcopy */}

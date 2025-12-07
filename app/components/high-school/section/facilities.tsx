@@ -1,6 +1,6 @@
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
-import placeholder from "@/images/base/placeholder.png"
+import { useRef, useState } from 'react';
+import placeholder from "@/images/base/default.jpg"
 
 const facilityStats = [
   { value: "2", label: "pools" },
@@ -11,6 +11,7 @@ const facilityStats = [
 export default function FacilitiesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section ref={ref} className="w-full bg-white py-20 px-6">
@@ -36,7 +37,11 @@ export default function FacilitiesSection() {
               
               {/* Play button overlay */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <button className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110"
+                  aria-label="Play video"
+                >
                   <svg 
                     className="w-8 h-8 text-[#1A5336] ml-1" 
                     fill="currentColor" 
@@ -58,9 +63,13 @@ export default function FacilitiesSection() {
           >
             {/* Title */}
             <div className="mb-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#1A5336] mb-6">
-                Facilities
-              </h2>
+             {/* Section Header - Facilities */}
+<div className='flex flex-col items-start mb-12'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm'>
+    Facilities
+  </h2>
+</div>
               
               {/* Description */}
               <p className="text-black font-medium text-lg leading-relaxed">
@@ -110,6 +119,39 @@ export default function FacilitiesSection() {
 
         </div>
       </div>
+
+      {/* YouTube Video Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-5xl aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+              aria-label="Close video"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* YouTube Embed */}
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/O7iVtgnbww4?autoplay=1&start=289"
+              title="Facilities Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

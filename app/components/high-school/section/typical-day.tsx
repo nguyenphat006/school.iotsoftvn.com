@@ -68,9 +68,13 @@ export default function TypicalDaySection() {
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Row - Full Width */}
         <div className="text-center mb-16">
-          <h2 className="font-bold text-[#1a5336] mb-6 text-4xl lg:text-5xl leading-tight">
-            Personalize learning method
-          </h2>
+{/* Section Header - Personalize Learning Method */}
+<div className='flex flex-col items-center mb-12'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center'>
+    Personalize learning method
+  </h3>
+</div>
           <p className="text-[#212121] font-medium text-lg max-w-3xl mx-auto">
             Our personalized learning adapts to each student’s pace and strengths. By tailoring lessons, we help children stay engaged and achieve progress, empowering them to discover their potential.
           </p>

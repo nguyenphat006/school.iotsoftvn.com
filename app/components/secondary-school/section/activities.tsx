@@ -36,10 +36,17 @@ export default function ActivitiesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#1A5336] relative inline-block">
-            Soft skills & extracurricular activities
-            {/* <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#FABA1E] mt-2"></div> */}
-          </h2>
+{/* Section Header */}
+{/* Section Header */}
+          <div className='flex flex-col items-center mb-12'>
+            <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+            {/* Thêm max-w-4xl để giới hạn chiều rộng và căn giữa tiêu đề */}
+            <div className='max-w-4xl'> 
+                <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center'>
+                  Soft Skills & Extracurricular Activities
+                </h3>
+            </div>
+          </div>
         </motion.div>
 
         {/* 2 Main Columns Grid */}

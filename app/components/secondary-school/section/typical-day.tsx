@@ -66,9 +66,16 @@ export default function TypicalDaySection() {
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Row - Full Width */}
         <div className="text-center mb-16">
-          <h2 className="font-bold text-[#1a5336] mb-6 text-4xl lg:text-5xl leading-tight">
-            A typical day at LHBS Secondary School
-          </h2>
+{/* Section Header */}
+          <div className='flex flex-col items-center mb-12'>
+            <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+            {/* Thêm max-w-4xl để giới hạn chiều rộng và căn giữa tiêu đề */}
+            <div className='max-w-4xl'> 
+              <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center leading-tight'>
+                A Typical Day at LHBS Secondary School
+              </h3>
+            </div>
+          </div>
           <p className="text-[#212121] font-medium text-lg max-w-3xl mx-auto">
             Each day combines rigorous academics, university preparation, and enriching experiences.
           </p>

@@ -52,18 +52,20 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
     id='academic-divisions'
     className="pb-16" ref={ref}>
       <div className="w-full max-w-screen-2xl mx-auto">
-        {/* Title Section */}
+{/* Title Section - Modified Style */}
         <motion.div
-           className="text-start mb-16 flex items-center gap-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+            className="text-start mb-16 flex items-center gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
         >
-            <div className="h-1.5 w-32 bg-[#1A5336]"></div>
+            {/* Đường Line: Chuyển sang màu vàng cam và làm tròn (rounded-full) */}
+            <div className="h-1.5 w-32 bg-[#FABA1E] rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]"></div>
 
-          <h2 className="font-bold text-[#1A5336] text-4xl lg:text-5xl mb-6">
-            Academic Divisions
-          </h2>
+            {/* Tiêu đề: Điều chỉnh màu sắc, font, và kích thước */}
+            <h3 className="font-black text-[#1E5338] text-3xl md:text-4xl lg:text-5xl uppercase tracking-wide drop-shadow-sm leading-snug">
+              Academic Divisions
+            </h3>
         </motion.div>
 
         {/* Academic Divisions Grid */}

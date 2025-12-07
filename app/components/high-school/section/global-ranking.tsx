@@ -92,14 +92,19 @@ export default function GlobalRankingSection() {
       <div className="container mx-auto max-w-7xl">
 
         {/* TITLE */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#07622E] text-center mb-6 uppercase"
-        >
-          LHBS STUDENTS AROUND THE WORLD
-        </motion.h1>
+{/* Section Header */}
+        <div className='flex flex-col items-center mb-12'>
+            <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+            {/* Giữ nguyên animation và thêm style font-black, màu sắc, tracking-wide */}
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center leading-tight max-w-4xl"
+            >
+              LHBS STUDENTS AROUND THE WORLD
+            </motion.h3>
+        </div>
 
         {/* GRID: 8 columns (map) + 4 columns (universities) */}
         <div className="grid grid-cols-12 gap-8 items-center">
