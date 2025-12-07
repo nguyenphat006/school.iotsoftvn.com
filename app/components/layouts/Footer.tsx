@@ -19,7 +19,7 @@ export default function Footer({ onNavigate }: { onNavigate: (path: string) => v
   ]
 
   const programLinks = [
-    { label: 'Kindergarten', url: '/academics/kindergarten' },
+    { label: 'Kindergarten', url: '/kindergarten' },
     { label: 'Primary School', url: '/primary-school' },
     { label: 'Secondary School', url: '/secondary-school' },
     { label: 'High School', url: '/high-school' }
