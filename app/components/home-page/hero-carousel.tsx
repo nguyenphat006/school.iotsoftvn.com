@@ -190,7 +190,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               
               {/* Tagline */}
               <p className="text-white text-lg md:text-xl font-medium drop-shadow-lg">
-                #Bước đệm vững chắc để trở thành công dân toàn cầu
+                #A solid stepping stone to becoming a global citizen
               </p>
             </motion.div>
 

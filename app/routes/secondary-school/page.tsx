@@ -37,7 +37,7 @@ export default function SecondaryShoolPage() {
       <ActivitiesSection/>
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
-      <LetsBeginCTA onNavigate={onNavigate} />
+      {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
       <ScrollToTop/>
     </>
   )

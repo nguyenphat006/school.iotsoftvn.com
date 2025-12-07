@@ -145,7 +145,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className='text-white/90 text-lg md:text-xl font-medium mb-10 max-w-2xl leading-relaxed drop-shadow-lg'
               >
-                #Bước đệm vững chắc để trở thành công dân toàn cầu
+                #A solid stepping stone to becoming a global citizen
               </motion.p>
 
               {/* CTA Button */}

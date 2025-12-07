@@ -38,7 +38,7 @@ export default function Home() {
       <GlobalRankingSection/>
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
-      <LetsBeginCTA onNavigate={onNavigate} />
+      {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
       <ScrollToTop/>
     </>
   )

@@ -68,9 +68,9 @@ export default function Footer({ onNavigate }: { onNavigate: (path: string) => v
         <div className='absolute inset-0 z-10 bg-black/20 mix-blend-multiply' />
       </div>
 
-      <div className='relative z-20 w-full max-w-[1920px] mx-auto px-4 md:px-12 lg:px-24 pt-16 pb-16'>
-        {/* Floating Action Buttons - Now inside footer */}
-        <div className='flex justify-center items-center gap-6 md:gap-12 mb-16'>
+      {/* Floating Action Buttons */}
+      <div className='relative z-30 container mx-auto px-4 -translate-y-1/2'>
+        <div className='flex justify-center items-center gap-6 md:gap-12'>
           {/* Inquire */}
           <CircleActionButton
             label='Inquire'
@@ -136,7 +136,9 @@ export default function Footer({ onNavigate }: { onNavigate: (path: string) => v
             }
           />
         </div>
+      </div>
 
+      <div className='relative z-20 w-full max-w-[1920px] mx-auto px-4 md:px-12 lg:px-24 pt-10 pb-16'>
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8'>
           {/* Left Column: Logo & Contact Info */}
           <div className='lg:col-span-5 flex flex-col items-start'>
