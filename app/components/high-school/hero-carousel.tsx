@@ -117,7 +117,7 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
               {/* Breadcrumb */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -126,10 +126,10 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               <nav className="flex items-center text-white/80 text-base font-medium">
                 <span>LHBS School</span>
                 <span className="mx-2">›</span>
-                <span className="text-white">LHBS Bien Hoa Kindergarten</span>
+                <span className="text-white">High School</span>
               </nav>
             </motion.div> */}
-            {/* Main Title - 2 rows as requested */}
+            {/* Main Title - 2 rows as requested
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

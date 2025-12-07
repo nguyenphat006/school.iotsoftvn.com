@@ -15,7 +15,6 @@ export default function Home() {
   
   return(
     <>
-    
       <HeroCarousel onNavigate={onNavigate} />
       <OverviewSection onNavigate={onNavigate} />
       <AcademicSection onNavigate={onNavigate} />
