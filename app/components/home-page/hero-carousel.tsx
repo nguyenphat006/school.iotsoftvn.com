@@ -1,21 +1,13 @@
 import { motion } from 'motion/react'
 import { useState, useEffect } from 'react'
 import { ScrollIndicator } from '~/components/ScrollIndicator' // Giả sử đường dẫn đúng
-import { motion } from 'motion/react'
-import { useState, useEffect } from 'react'
-import { ScrollIndicator } from '~/components/ScrollIndicator' // Giả sử đường dẫn đúng
 import Herobg from '@/images/home-page/Hero-bg.png'
 
-
 interface HeroProps {
-  onNavigate: (path: string) => void
   onNavigate: (path: string) => void
 }
 
 export default function HeroCarousel({ onNavigate }: HeroProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [isContentVisible, setIsContentVisible] = useState(true)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isContentVisible, setIsContentVisible] = useState(true)
@@ -25,30 +17,15 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
     'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/543157713_759809520014524_6243659489729173596_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFpZW4UkWopXLqUwnApPxzx6Sldju96q1rpKV2O73qrWlVgT_N9-qqIf8pv8uUhxEi4rgsx8AI2JKqSn1pil16h&_nc_ohc=yu4yLYaebQ0Q7kNvwGtodRu&_nc_oc=Adn7HVWs-KKiiFver-Sdn3LQEDs0TbEms4LZ0qLqJi4sZwIVys-IZlz3_97J6i3XmTk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=aax7A0hj7hhJKvywZYorng&oh=00_AflCXcNX4DQf4t8pNoI3cZ6kDATevPjhSufI1C85MDCGrg&oe=693B8DE4'
   ]
 
-    Herobg,
-    'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/543157713_759809520014524_6243659489729173596_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFpZW4UkWopXLqUwnApPxzx6Sldju96q1rpKV2O73qrWlVgT_N9-qqIf8pv8uUhxEi4rgsx8AI2JKqSn1pil16h&_nc_ohc=yu4yLYaebQ0Q7kNvwGtodRu&_nc_oc=Adn7HVWs-KKiiFver-Sdn3LQEDs0TbEms4LZ0qLqJi4sZwIVys-IZlz3_97J6i3XmTk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=aax7A0hj7hhJKvywZYorng&oh=00_AflCXcNX4DQf4t8pNoI3cZ6kDATevPjhSufI1C85MDCGrg&oe=693B8DE4'
-  ]
-
   useEffect(() => {
-    if (!isAutoPlaying) return
     if (!isAutoPlaying) return
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgroundImages.length)
     }, 5000)
     return () => clearInterval(interval)
   }, [isAutoPlaying, backgroundImages.length])
-      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, backgroundImages.length])
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
-
-  const toggleVisibility = () => setIsContentVisible(!isContentVisible)
     setCurrentSlide(index)
     setIsAutoPlaying(false)
     setTimeout(() => setIsAutoPlaying(true), 10000)
@@ -63,27 +40,15 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
     >
       {/* Background Image */}
       <div className='absolute inset-0 z-0 select-none'>
-    <section
-      className='relative w-full h-dvh flex flex-col overflow-hidden snap-start cursor-pointer group'
-      onClick={toggleVisibility}
-    >
-      {/* Background Image */}
-      <div className='absolute inset-0 z-0 select-none'>
         {backgroundImages.map((image, index) => (
           <motion.div
             key={index}
             className='absolute inset-0'
-            className='absolute inset-0'
             initial={{ opacity: 0 }}
-            animate={{
             animate={{
               opacity: index === currentSlide ? 1 : 0,
               scale: index === currentSlide ? 1.05 : 1.15
-              scale: index === currentSlide ? 1.05 : 1.15
             }}
-            transition={{
-              opacity: { duration: 1.5, ease: 'easeInOut' },
-              scale: { duration: 10, ease: 'linear' }
             transition={{
               opacity: { duration: 1.5, ease: 'easeInOut' },
               scale: { duration: 10, ease: 'linear' }
@@ -91,10 +56,6 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
           >
             <img
               src={image}
-              alt='LHBS campus'
-              className='w-full h-full object-cover object-center'
-              style={{ filter: 'brightness(0.9)' }}
-              draggable={false}
               alt='LHBS campus'
               className='w-full h-full object-cover object-center'
               style={{ filter: 'brightness(0.9)' }}
@@ -126,8 +87,6 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
         <div className='w-full max-w-[1920px] mx-auto max-h-[85vh] overflow-y-auto no-scrollbar pointer-events-auto'>
           <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
             <motion.div
-              className='lg:col-span-9 xl:col-span-8 flex flex-col items-start'
-              initial={{ opacity: 0, y: 30 }}
               className='lg:col-span-9 xl:col-span-8 flex flex-col items-start'
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -170,39 +129,13 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               </motion.p>
 
               {/* CTA Button */}
-              {/* Tagline */}
-              <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className='text-white/90 text-sm md:text-base lg:text-lg font-medium mb-4 md:mb-6 lg:mb-8 max-w-xl lg:max-w-2xl leading-relaxed drop-shadow-lg'
-              >
-                #A solid stepping stone to becoming a global citizen
-              </motion.p>
-
-              {/* CTA Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
                 // Avoid cutting off shadow in scroll container by adding margin bottom
                 className='mb-2'
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                // Avoid cutting off shadow in scroll container by adding margin bottom
-                className='mb-2'
               >
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onNavigate('/admissions')
-                  }}
-                  className='group relative px-5 py-2.5 md:px-7 md:py-3 lg:px-8 lg:py-3.5 bg-[#FABA1E] text-[#1E5338] font-bold text-[10px] md:text-xs lg:text-sm uppercase tracking-widest rounded-sm md:rounded 
-                           hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]'
-                >
-                  <span className='relative z-10'>Discover Now</span>
-                </button>
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
@@ -216,17 +149,9 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
               </motion.div>
             </motion.div>
           </div>
-          </div>
         </div>
       </motion.div>
-      </motion.div>
 
-      {/* Indicators */}
-      <motion.div
-        className='absolute bottom-6 md:bottom-10 right-4 md:right-12 z-30 flex items-center gap-2 md:gap-3'
-        animate={{ opacity: isContentVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
       {/* Indicators */}
       <motion.div
         className='absolute bottom-6 md:bottom-10 right-4 md:right-12 z-30 flex items-center gap-2 md:gap-3'
@@ -236,14 +161,6 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
         {backgroundImages.map((_, index) => (
           <button
             key={index}
-            onClick={(e) => {
-              e.stopPropagation()
-              goToSlide(index)
-            }}
-            className={`h-1 md:h-1.5 rounded-full transition-all duration-500 ease-out ${
-              index === currentSlide
-                ? 'w-8 md:w-12 bg-[#FABA1E] shadow-[0_0_10px_rgba(250,186,30,0.6)]'
-                : 'w-1 md:w-1.5 bg-white/40 hover:bg-white hover:w-2 md:hover:w-3'
             onClick={(e) => {
               e.stopPropagation()
               goToSlide(index)
@@ -263,6 +180,4 @@ export default function HeroCarousel({ onNavigate }: HeroProps) {
       </motion.div>
     </section>
   )
-  )
 }
-

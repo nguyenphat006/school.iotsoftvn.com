@@ -1,5 +1,4 @@
 import { EducationPillarsSection, EducationPillarModal } from '@/components/home-page/section/education-pillar'
-import { EducationPillarsSection, EducationPillarModal } from '@/components/home-page/section/education-pillar'
 import VideoHero from './hero-video'
 import HeroCarousel from './hero-carousel'
 import FoundingMessageSection from './section/founding-message'
@@ -14,15 +13,9 @@ import TypicalDaySection from './section/typical-day'
 import AcademicSection from './section/academic-divisions'
 import StudentCareSection from './section/student-care'
 import StudentAchievementsSection from './section/student-achievements'
-import StudentAchievementsSection from './section/student-achievements'
 import { OverviewSection } from './section/overview'
 import GlobalRankingSection from './section/global-ranking'
 
-export {
-  VideoHero,
-  HeroCarousel,
-  FoundingMessageSection,
-  CoreStrengthsSection,
 export {
   VideoHero,
   HeroCarousel,
@@ -45,4 +38,3 @@ export {
   StudentAchievementsSection,
   GlobalRankingSection
 }
-
