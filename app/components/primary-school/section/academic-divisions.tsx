@@ -63,9 +63,16 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1E5338] mb-4 uppercase tracking-tight">
+{/* Section Header - Start Aligned Line */}
+        <div className='flex flex-col'> 
+            {/* Đường line căn start */}
+            <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+            
+            {/* Tiêu đề gốc, giữ nguyên style (chỉ cần thêm drop-shadow) */}
+            <h2 className="font-black text-3xl lg:text-4xl text-[#1E5338] mb-4 uppercase tracking-tight drop-shadow-sm">
               Academic Divisions
             </h2>
+        </div>
             <p className="text-black font-medium text-base lg:text-lg leading-relaxed">
               At LHBS, we are proud to be a candidate school for the International Baccalaureate (IB) program. Our candidacy shows our commitment to high-quality education that fosters curiosity and intercultural understanding.
             </p>

@@ -151,15 +151,16 @@ export default function OverviewSection({ onNavigate }: OverviewSectionProps) {
       <div className="w-full">
         <div className="grid grid-cols-12">
           {/* Left Column - Green Background */}
-          <div className="col-span-12 lg:col-span-6 bg-[#227D46] py-12 px-8 flex items-center justify-center">
-            <button 
-              className="flex items-end gap-3 text-white hover:text-[#FABA1E] transition-colors duration-300 group"
-              onClick={() => onNavigate('/milestones')}
-            >
-              <span className="text-2xl md:text-3xl font-base">Explore the milestones</span>
-              <ChevronRight className="w-8 h-8 transition-transform group-hover:translate-x-2" />
-            </button>
-          </div>
+         <div className="col-span-12 lg:col-span-6 bg-[#1E5338] py-12 px-8 flex items-center justify-center">
+    <button 
+      className="flex items-end gap-3 text-white hover:text-[#FABA1E] transition-colors duration-300 group"
+      onClick={() => onNavigate('/milestones')}
+    >
+      {/* Đã thêm font-black và uppercase vào span */}
+      <span className="text-2xl md:text-3xl font-black uppercase tracking-wider">Explore the milestones</span>
+      <ChevronRight className="w-8 h-8 transition-transform group-hover:translate-x-2" />
+    </button>
+</div>
 
           {/* Right Column - Yellow Background with Stats */}
           <div className="col-span-12 lg:col-span-6 bg-[#E5A812] py-12 px-8">
