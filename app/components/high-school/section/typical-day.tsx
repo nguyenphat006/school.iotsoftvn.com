@@ -146,8 +146,8 @@ export default function TypicalDaySection() {
               </div>
               
               {/* Navigation Buttons positioned at center sides */}
-              <CarouselPrevious className="absolute top-1/2 -left-6 -translate-y-1/2 h-12 w-12 bg-white border-0 text-[#1a5336] hover:bg-[#1a5336] hover:text-white transition-colorss" />
-              <CarouselNext className="absolute top-1/2 -right-6 -translate-y-1/2 h-12 w-12 bg-white border-0 text-[#1a5336] hover:bg-[#1a5336] hover:text-white transition-colors" />
+              {/* <CarouselPrevious className="absolute top-1/2 -left-6 -translate-y-1/2 h-12 w-12 bg-white border-0 text-[#1a5336] hover:bg-[#1a5336] hover:text-white transition-colorss" />
+              <CarouselNext className="absolute top-1/2 -right-6 -translate-y-1/2 h-12 w-12 bg-white border-0 text-[#1a5336] hover:bg-[#1a5336] hover:text-white transition-colors" /> */}
             </Carousel>
         </div>
       </div>
