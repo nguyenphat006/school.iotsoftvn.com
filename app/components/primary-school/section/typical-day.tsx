@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import placeholder from "@/images/base/placeholder.png"
+import placeholder from "@/images/base/default.jpg"
 const dailyActivities = [
   {
     id: 1,
@@ -66,9 +66,12 @@ export default function TypicalDaySection() {
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Row - Full Width */}
         <div className="text-center mb-16">
-          <h2 className="font-bold text-[#1a5336] mb-6 text-4xl lg:text-5xl leading-tight">
-            A typical day at LHBS High School
-          </h2>
+<div className='flex flex-col items-center mb-10'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center leading-tight'>
+    A typical day at LHBS High School
+  </h2>
+</div>
           <p className="text-[#212121] font-medium text-lg max-w-3xl mx-auto">
             Each day combines rigorous academics, university preparation, and enriching experiences.
           </p>

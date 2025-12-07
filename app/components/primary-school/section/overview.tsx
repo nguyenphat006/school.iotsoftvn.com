@@ -40,12 +40,13 @@ export default function OverviewSection({ onNavigate }: OverviewSectionProps) {
     id='overview'
     className="py-16 md:py-24 pb-0! bg-white">
       <div className="max-w-[1440px] mx-auto px-4 md:px-20">
-        {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#15452C] mb-6">
-            Personalize learning method
-          </h2>
-        </div>
+{/* Section Header - Personalize Learning Method */}
+<div className='flex flex-col items-center mb-12'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center'>
+    Personalize learning method
+  </h3>
+</div>
 
         {/* Carousel Cards - Above Timeline */}
         <div className="mb-12 max-w-5xl mx-auto">

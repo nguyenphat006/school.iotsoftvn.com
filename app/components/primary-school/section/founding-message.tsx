@@ -79,7 +79,7 @@ export default function FoundingMessageSection({ onNavigate }: { onNavigate: (pa
             </div>
             
             {/* Title */}
-            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-6 leading-tight">
+            <h2 className="font-black text-2xl md:text-3xl lg:text-4xl text-white mb-6 leading-tight uppercase tracking-tight">
               Nutrition is the foundation of health for students
             </h2>
             

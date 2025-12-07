@@ -1,6 +1,6 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import placeholder from "@/images/base/placeholder.png"
+import placeholder from "@/images/base/default.jpg"
 
 const facilityStats = [
   { value: "2", label: "pools" },
@@ -58,9 +58,13 @@ export default function FacilitiesSection() {
           >
             {/* Title */}
             <div className="mb-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#1A5336] mb-6">
-                Facilities
-              </h2>
+             {/* Section Header - Facilities */}
+<div className='flex flex-col items-start mb-12'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm'>
+    Facilities
+  </h2>
+</div>
               
               {/* Description */}
               <p className="text-black font-medium text-lg leading-relaxed">

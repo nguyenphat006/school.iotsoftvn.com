@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import placeholder from "@/images/base/placeholder.png"
+import placeholder from "@/images/base/default.jpg"
 const dailyActivities = [
   {
     id: 1,

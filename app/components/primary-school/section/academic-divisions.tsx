@@ -63,7 +63,7 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1A5336] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1E5338] mb-4 uppercase tracking-tight">
               Academic Divisions
             </h2>
             <p className="text-black font-medium text-base lg:text-lg leading-relaxed">
