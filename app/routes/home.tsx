@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import type { Route } from './+types/home'
 import {
   StudentAchievementsSection,
@@ -27,6 +28,10 @@ export function meta({}: Route.MetaArgs) {
     { title: 'LHBS - Trường Song Ngữ Lạc Hồng' },
     { name: 'description', content: 'Chào mừng tới Trường Song Ngữ Lạc Hồng - LHBS' }
   ]
+  return [
+    { title: 'LHBS - Trường Song Ngữ Lạc Hồng' },
+    { name: 'description', content: 'Chào mừng tới Trường Song Ngữ Lạc Hồng - LHBS' }
+  ]
 }
 
 export default function Home({ onNavigate }: { onNavigate: (path: string) => void }) {
@@ -38,6 +43,8 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
       <StudentAchievementsSection />
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
+      {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
+      <ScrollToTop />
       {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
       <ScrollToTop />
     </>

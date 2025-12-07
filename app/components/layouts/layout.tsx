@@ -51,7 +51,7 @@ export default function Layout() {
       />
       
       <main>
-        <Outlet />
+        <Outlet context={{ onNavigate: handleNavigate }} />
       </main>
       
       <Footer onNavigate={handleNavigate} />

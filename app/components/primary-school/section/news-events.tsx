@@ -2,14 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 import backgroundImage from '@/images/home-page/section-news/Layer_5.png'
-import { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
-import { ArrowRight } from 'lucide-react'
-import backgroundImage from '@/images/home-page/section-news/Layer_5.png'
 
 export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: string) => void }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
@@ -32,7 +26,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
       link: '/news/3'
     }
   ]
-  ]
 
   // Column 2: SỰ KIỆN (Events) - 1 main image + 2 small images with titles
   const eventItems = [
@@ -53,14 +46,12 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
       link: '/events/3'
     }
   ]
-  ]
 
   // Column 3: HÌNH ẢNH (Gallery) - 1 large image
   const galleryItem = {
     image: 'https://lhbs.edu.vn/wp-content/uploads/2025/11/578369959_810928768235932_2189832322315432240_n.jpg',
     title: 'LHBS Students Engaging in Holistic Educational Activities',
     link: '/gallery/1'
-  }
   }
 
   return (
@@ -71,10 +62,8 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
         style={{
           backgroundImage: `url(${backgroundImage})`,
           top: '0%'
-          top: '0%'
         }}
       />
-
 
       {/* Content with relative z-index */}
       <div className='grow w-full max-w-[1920px] mx-auto px-4 md:px-12 lg:px-16 relative z-10 overflow-y-auto no-scrollbar py-8 md:py-12 flex flex-col justify-center'>
@@ -97,10 +86,7 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
 
         {/* 3 Column Grid */}
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 grow h-full pt-4'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 grow h-full pt-4'>
           {/* Column 1: TIN TỨC */}
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
-          {/* Column 1: NEWS */}
           <motion.div
             className='border-l-4 border-gray-100 pl-4 md:pl-6 flex flex-col relative group/col h-full'
             initial={{ opacity: 0, y: 50 }}
@@ -134,9 +120,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
                     <h4 className='text-sm md:text-base font-bold leading-tight line-clamp-2 drop-shadow-md group-hover:text-[#FABA1E] transition-colors mb-1'>
                       {newsItems[0].title}
                     </h4>
-                    <h4 className='text-sm md:text-base font-bold leading-tight line-clamp-2 drop-shadow-md group-hover:text-[#FABA1E] transition-colors mb-1'>
-                      {newsItems[0].title}
-                    </h4>
                   </div>
                 </div>
               </div>
@@ -164,8 +147,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
                 </div>
               ))}
             </div>
-              ))}
-            </div>
 
             {/* View More Button */}
             <div className='mt-auto pt-2 shrink-0'>
@@ -179,7 +160,7 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
             </div>
           </motion.div>
 
-          {/* Column 2: EVENTS */}
+          {/* Column 2: SỰ KIỆN */}
           <motion.div
             className='border-l-4 border-gray-100 pl-4 md:pl-6 flex flex-col relative group/col h-full'
             initial={{ opacity: 0, y: 50 }}
@@ -222,7 +203,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
             <div className='grid grid-cols-2 gap-4 mb-6 grow content-start'>
               {eventItems.slice(1).map((item, index) => (
                 <div
-                <div
                   key={index}
                   className='cursor-pointer group/item flex flex-col h-full'
                   onClick={() => onNavigate(item.link)}
@@ -231,7 +211,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
                     <img
                       src={item.image}
                       alt={item.title}
-                      className='w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110'
                       className='w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110'
                     />
                   </div>
@@ -278,7 +257,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
                   src={galleryItem.image}
                   alt={galleryItem.title}
                   className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
-                  className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
                 />
 
                 {/* Gallery Icon Overlay */}
@@ -307,14 +285,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
               {galleryItem.title}
             </h4>
 
-            {/* Title Below Image */}
-            <h4
-              className='text-base font-bold text-[#1E5338] leading-tight drop-shadow-sm group-hover:text-[#FABA1E] transition-colors mb-6 cursor-pointer'
-              onClick={() => onNavigate(galleryItem.link)}
-            >
-              {galleryItem.title}
-            </h4>
-
             {/* View More Button */}
             <div className='mt-auto pt-2 shrink-0'>
               <button
@@ -328,8 +298,6 @@ export default function NewsEventsSection({ onNavigate }: { onNavigate: (path: s
           </motion.div>
         </div>
       </div>
-    </section>
-  )
     </section>
   )
 }

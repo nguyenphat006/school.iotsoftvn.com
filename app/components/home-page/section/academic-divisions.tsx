@@ -4,6 +4,12 @@ import img01 from '@/images/home-page/section-academics/01.png'
 import img02 from '@/images/home-page/section-academics/02.png'
 import img03 from '@/images/home-page/section-academics/03.png'
 import cardlhbs from '@/images/home-page/section-academics/card-lhbs.png'
+import { motion, useInView } from 'motion/react'
+import { useRef } from 'react'
+import img01 from '@/images/home-page/section-academics/01.png'
+import img02 from '@/images/home-page/section-academics/02.png'
+import img03 from '@/images/home-page/section-academics/03.png'
+import cardlhbs from '@/images/home-page/section-academics/card-lhbs.png'
 
 const academicDivisions = [
   {
@@ -12,7 +18,13 @@ const academicDivisions = [
     title: 'LHBS Primary School',
     description:
       'Building strong foundations in a nurturing environment where young learners develop essential skills, creativity, and a love for learning through play-based and structured activities.',
+    gradeRange: 'FROM GRADE 1-5',
+    title: 'LHBS Primary School',
+    description:
+      'Building strong foundations in a nurturing environment where young learners develop essential skills, creativity, and a love for learning through play-based and structured activities.',
     image: img01,
+    alt: 'LHBS Primary School students',
+    href: '/primary-school'
     alt: 'LHBS Primary School students',
     href: '/primary-school'
   },
@@ -22,7 +34,13 @@ const academicDivisions = [
     title: 'LHBS Secondary School',
     description:
       'Developing critical thinking and academic excellence through comprehensive bilingual education that prepares students for advanced studies and global citizenship.',
+    gradeRange: 'FROM GRADE 6-9',
+    title: 'LHBS Secondary School',
+    description:
+      'Developing critical thinking and academic excellence through comprehensive bilingual education that prepares students for advanced studies and global citizenship.',
     image: img02,
+    alt: 'LHBS Secondary School students',
+    href: '/secondary-school'
     alt: 'LHBS Secondary School students',
     href: '/secondary-school'
   },
@@ -32,17 +50,27 @@ const academicDivisions = [
     title: 'LHBS High School',
     description:
       'Empowering students to achieve their highest potential through rigorous academic programs, university preparation, and leadership development for future success.',
+    gradeRange: 'FROM GRADE 10-12',
+    title: 'LHBS High School',
+    description:
+      'Empowering students to achieve their highest potential through rigorous academic programs, university preparation, and leadership development for future success.',
     image: img03,
+    alt: 'LHBS High School students',
+    href: 'https://school-lhbs.vercel.app/high-school'
     alt: 'LHBS High School students',
     href: 'https://school-lhbs.vercel.app/high-school'
   }
 ]
+]
 
 interface AcademicSectionProps {
+  onNavigate: (path: string) => void
   onNavigate: (path: string) => void
 }
 
 export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
@@ -52,20 +80,25 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
         {/* Title Section */}
         <motion.div
           className='text-start mb-16 flex items-center gap-4'
+          className='text-start mb-16 flex items-center gap-4'
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <div className='h-1.5 w-32 bg-[#1A5336]'></div>
+          <div className='h-1.5 w-32 bg-[#1A5336]'></div>
 
+          <h2 className='font-bold text-[#1A5336] text-4xl lg:text-5xl mb-6'>Academic Divisions</h2>
           <h2 className='font-bold text-[#1A5336] text-4xl lg:text-5xl mb-6'>Academic Divisions</h2>
         </motion.div>
 
         {/* Academic Divisions Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {academicDivisions.map((division, index) => (
             <motion.div
               key={division.id}
+              className='relative group cursor-pointer'
               className='relative group cursor-pointer'
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -73,28 +106,40 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
               onClick={() => onNavigate(division.href)}
             >
               <div className='relative h-[400px] lg:h-[450px] rounded-none overflow-hidden'>
+              <div className='relative h-[400px] lg:h-[450px] rounded-none overflow-hidden'>
                 {/* Background Image */}
                 <img
                   src={division.image}
                   alt={division.alt}
                   className='absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                  className='absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
                 />
+
 
                 {/* Gradient Overlay */}
                 <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
 
+                <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
+
                 {/* Content */}
                 <div className='absolute bottom-0 left-0 right-0 p-6 text-white'>
+                <div className='absolute bottom-0 left-0 right-0 p-6 text-white'>
                   {/* Grade Range Badge */}
+                  <div className='inline-block'>
+                    <span className='text-[#FABA1E] text-sm font-bold uppercase tracking-wider'>
                   <div className='inline-block'>
                     <span className='text-[#FABA1E] text-sm font-bold uppercase tracking-wider'>
                       {division.gradeRange}
                     </span>
                   </div>
 
+
                   {/* Title */}
                   <h3 className='text-2xl lg:text-3xl font-bold mb-3 leading-tight'>{division.title}</h3>
+                  <h3 className='text-2xl lg:text-3xl font-bold mb-3 leading-tight'>{division.title}</h3>
                   {/* Learn More Arrow (appears on hover) */}
+                  <div className='mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                    <div className='flex items-center text-[#FABA1E] font-medium text-sm'>
                   <div className='mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                     <div className='flex items-center text-[#FABA1E] font-medium text-sm'>
                       <span>Learn More</span>
@@ -103,7 +148,13 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
+                      <svg
+                        className='ml-2 w-4 h-4 transition-transform group-hover:translate-x-1'
+                        fill='none'
+                        stroke='currentColor'
+                        viewBox='0 0 24 24'
                       >
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
                       </svg>
                     </div>
@@ -111,7 +162,10 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
                 </div>
                 {/* Hover Overlay for better interaction feedback */}
                 <div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300' />
+                <div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300' />
               </div>
+              <div className='absolute bottom-0 right-0 w-54 h-auto pointer-events-none'>
+                <img src={cardlhbs} alt='LHBS decoration' className='w-full h-auto object-contain' />
               <div className='absolute bottom-0 right-0 w-54 h-auto pointer-events-none'>
                 <img src={cardlhbs} alt='LHBS decoration' className='w-full h-auto object-contain' />
               </div>
@@ -120,5 +174,6 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
         </div>
       </div>
     </section>
+  )
   )
 }

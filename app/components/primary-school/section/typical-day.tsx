@@ -1,16 +1,16 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import placeholder from "@/images/base/placeholder.png"
+import placeholder from "@/images/base/default.jpg"
 const dailyActivities = [
   {
     id: 1,
-    title: "Start strong, stay focused",
+    title: "Warm Morning Start",
     description:
-      "High school students begin the day with homeroom and advisory sessions to review goals, plan assignments, and reflect on progress. These moments help them stay focused, organized, and ready for a productive day.",
+      "Students arrive to friendly greetings and simple routines that help them feel settled, comfortable, and ready to learn.",
     image:
       placeholder,
     alt: "High school students preparing for morning advisory",
-    timeLabel: "Morning advisory",
+    timeLabel: "01",
     timelineColor: "#1A5336",
     backgroundColor: "#1A5336",
     titleColor: "#FFAE00",
@@ -18,13 +18,13 @@ const dailyActivities = [
   },
   {
     id: 2,
-    title: "Academic excellence in action",
+    title: "Collaborative Activities",
     description:
-      "Morning lessons focus on IGCSE and A-Level courses, where students develop deep subject mastery and critical thinking. They engage in discussions, labs, and problem-solving activities that prepare them for university-level challenges.",
+      "Group projects and partner work allow students to share ideas, develop teamwork skills, and build strong friendships.",
     image:
       placeholder,
     alt: "High school students engaged in academic lessons",
-    timeLabel: "Morning classes",
+    timeLabel: "02",
     timelineColor: "#FABA1E",
     backgroundColor: "#FFFFFF",
     titleColor: "#1A5336",
@@ -32,13 +32,13 @@ const dailyActivities = [
   },
   {
     id: 3,
-    title: "Recharge and connect",
+    title: "Hands-On Learning",
     description:
-      "Lunchtime offers students the chance to recharge and build friendships. Many also take part in student-led clubs or discussions about projects, competitions, or community initiatives.",
+      "Experiments creative tasks real-world problem-solving give students opportunities to explore and apply new concepts.",
     image:
       placeholder,
     alt: "Students having lunch and sharing ideas with peers",
-    timeLabel: "Lunch break",
+    timeLabel: "03",
     timelineColor: "#1A5336",
     backgroundColor: "#FFFFFF",
     titleColor: "#1A5336",
@@ -46,32 +46,18 @@ const dailyActivities = [
   },
   {
     id: 4,
-    title: "Beyond the classroom",
+    title: "Small-Group & Individual Practice",
     description:
-      "Afternoons feature extended learning — from research projects, leadership workshops, and global issue seminars to creativity and innovation labs. Students learn to lead, collaborate, and make meaningful impact.",
+      "Teachers provide targeted instruction while students work at their own pace, supporting confidence and personalized growth.",
     image:
       placeholder,
     alt: "High school students in leadership and innovation projects",
-    timeLabel: "Afternoon sessions",
+    timeLabel: "04",
     timelineColor: "#FABA1E",
     backgroundColor: "#FFFFFF",
     titleColor: "#1A5336",
     descriptionColor: "#1A1A1A99",
-  },
-  {
-    id: 5,
-    title: "Pathways to the future",
-    description:
-      "After school, students focus on university preparation — attending mentorship sessions, career counseling, or advanced academic clubs. Many also pursue arts, sports, or service projects to strengthen their personal portfolios.",
-    image:
-      placeholder,
-    alt: "Students participating in university prep and after-school clubs",
-    timeLabel: "After school",
-    timelineColor: "#FABA1E",
-    backgroundColor: "#FFFFFF",
-    titleColor: "#1A5336",
-    descriptionColor: "#1A1A1A99",
-  },
+  }
 ];
 
 export default function TypicalDaySection() {
@@ -80,9 +66,12 @@ export default function TypicalDaySection() {
       <div className="w-full max-w-screen-2xl mx-auto">
         {/* Title Row - Full Width */}
         <div className="text-center mb-16">
-          <h2 className="font-bold text-[#1a5336] mb-6 text-4xl lg:text-5xl leading-tight">
-            A typical day at LHBS Kindergarten
-          </h2>
+<div className='flex flex-col items-center mb-10'>
+  <div className='bg-[#FABA1E] w-20 h-1.5 mb-6 rounded-full shadow-[0_0_15px_rgba(250,186,30,0.4)]' />
+  <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-[#1E5338] uppercase tracking-wide drop-shadow-sm text-center leading-tight'>
+    A typical day at LHBS High School
+  </h2>
+</div>
           <p className="text-[#212121] font-medium text-lg max-w-3xl mx-auto">
             Each day combines rigorous academics, university preparation, and enriching experiences.
           </p>

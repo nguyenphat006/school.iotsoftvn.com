@@ -15,7 +15,7 @@ export function ScrollIndicator({ targetSectionId = 'academic-divisions' }: Scro
       // Get the current scroll position
       const currentScrollY = window.scrollY;
       // Add offset to scroll a bit higher than the target element
-      const offset = 220; // Adjust this value to control how much higher to scroll
+      const offset = 90; // Adjust this value to control how much higher to scroll
       const targetScrollY = targetElement.offsetTop - offset;
       const distance = Math.abs(targetScrollY - currentScrollY);
       
