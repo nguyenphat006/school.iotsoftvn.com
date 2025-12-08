@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { Route } from './+types/home'
+import { useOutletContext } from 'react-router'
 import {
   StudentAchievementsSection,
   // LetsBeginCTA,
@@ -34,7 +35,9 @@ export function meta({}: Route.MetaArgs) {
   ]
 }
 
-export default function Home({ onNavigate }: { onNavigate: (path: string) => void }) {
+export default function Home() {
+  const { onNavigate } = useOutletContext<{ onNavigate: (path: string) => void }>()
+  
   return (
     <>
       <HeroCarousel onNavigate={onNavigate} />
@@ -46,7 +49,6 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
       <TestimonialQuoteSection onNavigate={onNavigate} />
       <ScrollToTop />
       {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
-      <ScrollToTop />
     </>
   )
 }

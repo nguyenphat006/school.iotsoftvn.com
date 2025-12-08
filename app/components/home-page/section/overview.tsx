@@ -199,7 +199,7 @@ export function OverviewSection({ onNavigate }: OverviewSectionProps) {
                   {schoolData[activeTab].description}
                 </p>
 
-                <button
+                <button 
                   onClick={() => onNavigate(schoolData[activeTab].link)}
                   className='group/btn inline-flex items-center gap-3 px-8 py-4 bg-[#FABA1E] text-[#003820] font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl'
                 >
