@@ -1,9 +1,9 @@
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import { useNavigate } from 'react-router'
 import img01 from '@/images/home-page/section-academics/01.png'
 import img02 from '@/images/home-page/section-academics/02.png'
 import img03 from '@/images/home-page/section-academics/03.png'
-// import cardlhbs from '@/images/home-page/section-academics/card-lhbs.png' // Removed for cleaner premium look
 
 const academicDivisions = [
   {
@@ -38,13 +38,10 @@ const academicDivisions = [
   }
 ]
 
-interface AcademicSectionProps {
-  onNavigate: (path: string) => void
-}
-
-export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
+export default function AcademicSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const navigate = useNavigate()
 
   return (
     <section id='academic-divisions' className='py-20 md:py-32 bg-white overflow-hidden' ref={ref}>
@@ -81,7 +78,7 @@ export default function AcademicSection({ onNavigate }: AcademicSectionProps) {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              onClick={() => onNavigate(division.href)}
+              onClick={() => navigate(division.href)}
             >
               <div className='relative h-[400px] lg:h-[480px] w-full'>
                 {/* Background Image with Zoom Effect */}

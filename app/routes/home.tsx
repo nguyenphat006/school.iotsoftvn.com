@@ -17,7 +17,8 @@ import {
   TypicalDaySection,
   AcademicSection,
   StudentCareSection,
-  OverviewSection
+  OverviewSection,
+  GlobalRankingSection
 } from '@/components/home-page'
 import ScrollToTop from '@/components/ui/components/ScrollToTop'
 import { SolidEducationSection } from '@/components/home-page/section/solid-education'
@@ -38,11 +39,11 @@ export default function Home({ onNavigate }: { onNavigate: (path: string) => voi
     <>
       <HeroCarousel onNavigate={onNavigate} />
       <OverviewSection onNavigate={onNavigate} />
-      <AcademicSection onNavigate={onNavigate} />
+      <AcademicSection />
+      <GlobalRankingSection />
       <StudentAchievementsSection />
       <NewsEventsSection onNavigate={onNavigate} />
       <TestimonialQuoteSection onNavigate={onNavigate} />
-      {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
       <ScrollToTop />
       {/* <LetsBeginCTA onNavigate={onNavigate} /> */}
       <ScrollToTop />
